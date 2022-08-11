@@ -9,7 +9,8 @@
     "test": "jest",
     "lint": "eslint . --ignore-path .gitignore --fix --ext .ts,.tsx",
     "check-types": "tsc --noEmit",
-    "postinstall": "yarn --cwd ./polkadot-api"
+    "postinstall": "yarn --cwd ./polkadot-api",
+    "validate": "yarn lint & yarn check-types"
   },
   "dependencies": {
     "react": "18.0.0",
