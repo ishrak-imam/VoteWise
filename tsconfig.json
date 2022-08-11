@@ -14,8 +14,14 @@
     "moduleResolution": "node",
     "typeRoots": ["node_modules/@types"],
     "baseUrl": "./",
+    "rootDir": ".",
     "paths": {
-      "*": ["node_modules/*"]
+      "*": ["node_modules/*"],
+      "@polkadotApi/*": ["src/polkadotApi/*"],
+      "@context/*": ["src/context/*"],
+      "@service/*": ["src/service/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@atoms/*": ["src/atoms/*"]
     },
     "skipLibCheck": true
   },

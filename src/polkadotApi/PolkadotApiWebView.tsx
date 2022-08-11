@@ -11,7 +11,7 @@ import {
   apiStatusState,
   txState,
 } from './atoms';
-import {useNetwork} from '../atoms/network';
+import {useNetwork} from '@atoms/network';
 import {useAppAccounts} from './useAppAccounts';
 import {
   addAccountMessage,
@@ -75,7 +75,7 @@ import {
   Blake2AsHexResultMessage,
   Blake2AsHexMessage,
   blake2AsHexMessage,
-} from '../../polkadot-api';
+} from 'polkadot-api';
 
 type PostMessage = (message: Message, id?: string) => void;
 

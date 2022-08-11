@@ -1,4 +1,4 @@
-import {networkState} from '../atoms/network';
+import {networkState} from '@atoms/network';
 import {selector, useRecoilState, useRecoilValue} from 'recoil';
 import {appAccountsState} from './atoms';
 

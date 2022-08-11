@@ -1,5 +1,5 @@
 import {atom, RecoilState} from 'recoil';
-import {persistAtom} from '../atoms/persist';
+import {persistAtom} from '@atoms/persist';
 import {
   KeyringAccount,
   AddAccountMessage,
@@ -31,7 +31,7 @@ import {
   TxPayloadData,
   Blake2AsHexMessage,
   Blake2AsHexResultMessage,
-} from '../../polkadot-api';
+} from 'polkadot-api';
 
 export const webViewReadyState = atom({
   key: 'webViewReadyState',

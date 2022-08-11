@@ -9,6 +9,7 @@
     "moduleResolution": "node",
     "typeRoots": ["node_modules/@types"],
     "baseUrl": "./",
+    "rootDir": ".",
     "paths": {
       "*": ["node_modules/*"]
     },

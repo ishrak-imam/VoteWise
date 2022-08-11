@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Button} from 'react-native';
-import {PolkadotApiWebView} from '../polkadotApi/PolkadotApiWebView';
-import {useCryptoUtil} from '../polkadotApi/useCryptoUtil';
+import {PolkadotApiWebView} from '@polkadotApi/PolkadotApiWebView';
+import {useCryptoUtil} from '@polkadotApi/useCryptoUtil';
 
 export function MnemonicScreen() {
   const {generateMnemonic} = useCryptoUtil();
