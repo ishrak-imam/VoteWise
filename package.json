@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ignore-path .gitignore --fix --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ignore-path .gitignore --fix --ext .js,.jsx,.ts,.tsx",
+    "postinstall": "yarn --cwd ./polkadot-api"
   },
   "dependencies": {
     "react": "18.0.0",
