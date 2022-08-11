@@ -5,6 +5,19 @@
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Completeness */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "module": "ESNext",
+    "target": "esnext",
+    "allowJs": false,
+    "moduleResolution": "node",
+    "typeRoots": ["node_modules/@types"],
+    "baseUrl": "./",
+    "paths": {
+      "*": ["node_modules/*"]
+    },
+    "skipLibCheck": true
+  },
+  "include": ["src"]
 }

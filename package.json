@@ -8,14 +8,19 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ignore-path .gitignore --fix --ext .ts,.tsx",
+    "check-types": "tsc --noEmit",
     "postinstall": "yarn --cwd ./polkadot-api"
   },
   "dependencies": {
     "react": "18.0.0",
     "react-native": "0.69.3",
     "react-native-fs": "^2.20.0",
+    "react-native-get-random-values": "^1.8.0",
+    "react-native-mmkv": "^2.4.3",
     "react-native-webview": "^11.23.0",
-    "recoil": "^0.7.4"
+    "recoil": "^0.7.4",
+    "recoil-persist": "^4.2.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -25,6 +30,7 @@
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.69.3",
     "@types/react-test-renderer": "^18.0.0",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "babel-jest": "^26.6.3",

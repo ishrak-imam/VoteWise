@@ -253,6 +253,13 @@ android {
 
         }
     }
+
+    applicationVariants.all { variant ->
+        copy {
+            from ("../../polkadot-api/dist")
+            into ("src/main/assets")
+        }
+    }
 }
 
 dependencies {
