@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "eslint --fix --ext .ts .",
+    "lint": "eslint --ignore-path .gitignore --fix --ext .ts .",
     "check-types": "tsc --noEmit",
     "validate": "yarn lint & yarn check-types",
     "build": "webpack"

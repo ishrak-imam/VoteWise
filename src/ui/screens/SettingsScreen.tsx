@@ -1,11 +1,14 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
+import {SafeView} from '@ui/components/SafeView';
 
 export function SettingsScreen() {
   return (
-    <View style={styles.container}>
-      <Text>Settings</Text>
-    </View>
+    <SafeView>
+      <View style={styles.container}>
+        <Text>Settings</Text>
+      </View>
+    </SafeView>
   );
 }
 

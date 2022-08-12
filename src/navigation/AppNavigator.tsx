@@ -2,9 +2,9 @@ import React from 'react';
 import {NavigationContainer} from '@navigation/NavigationContainer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {HomeScreen} from '@screens/HomeScreen';
-import {MnemonicScreen} from '@screens/MnemonicScreen';
-import {SettingsScreen} from '@screens/SettingsScreen';
+import {HomeScreen} from '@ui/screens/HomeScreen';
+import {MnemonicScreen} from '@ui/screens/MnemonicScreen';
+import {SettingsScreen} from '@ui/screens/SettingsScreen';
 import type {
   HomeStackNavigation,
   MenuStackNavigation,

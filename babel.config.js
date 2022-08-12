@@ -13,9 +13,9 @@ module.exports = {
           '@hooks': './src/hooks',
           '@atoms': './src/atoms',
           '@navigation': './src/navigation',
-          '@screens': './src/screens'
+          '@ui': './src/ui',
         },
       },
     ],
-  ]
+  ],
 };

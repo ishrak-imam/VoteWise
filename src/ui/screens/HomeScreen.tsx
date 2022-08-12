@@ -3,6 +3,7 @@ import {View, StyleSheet, Button} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {HomeStackNavigation} from '@navigation/types';
 import {mnemonicScreen} from '@navigation/routeKeys';
+import {SafeView} from '@ui/components/SafeView';
 
 type Props = {
   navigation: NativeStackNavigationProp<HomeStackNavigation, 'Home'>;
@@ -10,14 +11,16 @@ type Props = {
 
 export function HomeScreen({navigation}: Props) {
   return (
-    <View style={styles.container}>
-      <Button
-        title="Go to mnemonic"
-        onPress={() => {
-          navigation.navigate(mnemonicScreen);
-        }}
-      />
-    </View>
+    <SafeView>
+      <View style={styles.container}>
+        <Button
+          title="Go to mnemonic"
+          onPress={() => {
+            navigation.navigate(mnemonicScreen);
+          }}
+        />
+      </View>
+    </SafeView>
   );
 }
 

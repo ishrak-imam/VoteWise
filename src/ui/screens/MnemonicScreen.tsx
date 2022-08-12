@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Button} from 'react-native';
-import {PolkadotApiWebView} from '@polkadotApi/PolkadotApiWebView';
 import {useCryptoUtil} from '@polkadotApi/useCryptoUtil';
+import {SafeView} from '@ui/components/SafeView';
 
 export function MnemonicScreen() {
   const {generateMnemonic} = useCryptoUtil();
@@ -11,10 +11,11 @@ export function MnemonicScreen() {
   }, [generateMnemonic]);
 
   return (
-    <View style={styles.container}>
-      <Button title="Generate seed" onPress={generateSeed} />
-      <PolkadotApiWebView />
-    </View>
+    <SafeView>
+      <View style={styles.container}>
+        <Button title="Generate seed" onPress={generateSeed} />
+      </View>
+    </SafeView>
   );
 }
 
