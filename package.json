@@ -9,10 +9,12 @@
     "test": "jest",
     "lint": "eslint . --ignore-path .gitignore --fix --ext .ts,.tsx",
     "check-types": "tsc --noEmit",
-    "postinstall": "yarn --cwd ./polkadot-api",
-    "validate": "yarn lint & yarn check-types"
+    "postinstall": "yarn build-polkadot-api",
+    "validate": "yarn lint & yarn check-types",
+    "build-polkadot-api": "cd ./polkadot-api && yarn && yarn build"
   },
   "dependencies": {
+    "polkadot-api": "./polkadot-api",
     "react": "18.0.0",
     "react-native": "0.69.3",
     "react-native-fs": "^2.20.0",
@@ -35,6 +37,7 @@
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.70.3",
