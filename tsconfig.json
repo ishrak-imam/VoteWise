@@ -21,7 +21,9 @@
       "@context/*": ["src/context/*"],
       "@service/*": ["src/service/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@atoms/*": ["src/atoms/*"]
+      "@atoms/*": ["src/atoms/*"],
+      "@navigation/*": ["src/navigation/*"],
+      "@screens/*": ["src/screens/*"]
     },
     "skipLibCheck": true
   },

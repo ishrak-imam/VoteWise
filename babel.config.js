@@ -12,6 +12,8 @@ module.exports = {
           '@service': './src/service',
           '@hooks': './src/hooks',
           '@atoms': './src/atoms',
+          '@navigation': './src/navigation',
+          '@screens': './src/screens'
         },
       },
     ],

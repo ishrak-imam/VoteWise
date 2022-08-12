@@ -14,12 +14,18 @@
     "build-polkadot-api": "cd ./polkadot-api && yarn && yarn build"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.3.2",
+    "@react-navigation/native": "^6.0.11",
+    "@react-navigation/native-stack": "^6.7.0",
     "polkadot-api": "./polkadot-api",
     "react": "18.0.0",
     "react-native": "0.69.3",
     "react-native-fs": "^2.20.0",
+    "react-native-gesture-handler": "^2.5.0",
     "react-native-get-random-values": "^1.8.0",
     "react-native-mmkv": "^2.4.3",
+    "react-native-safe-area-context": "^4.3.1",
+    "react-native-screens": "^3.15.0",
     "react-native-webview": "^11.23.0",
     "recoil": "^0.7.4",
     "recoil-persist": "^4.2.0",

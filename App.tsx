@@ -1,11 +1,11 @@
 import React from 'react';
 import {RecoilRoot} from 'recoil';
-import {MnemonicScreen} from './src/screens/MnemonicScreen';
+import {AppNavigator} from './src/navigation/AppNavigator';
 
 export default function App() {
   return (
     <RecoilRoot>
-      <MnemonicScreen />
+      <AppNavigator />
     </RecoilRoot>
   );
 }
