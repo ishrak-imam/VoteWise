@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, Button} from 'react-native';
+import {View, StyleSheet} from 'react-native';
+import {Button} from '@ui/library';
 import {useCryptoUtil} from '@polkadotApi/useCryptoUtil';
 import {SafeView} from '@ui/components/SafeView';
 
@@ -13,7 +14,7 @@ export function MnemonicScreen() {
   return (
     <SafeView>
       <View style={styles.container}>
-        <Button title="Generate seed" onPress={generateSeed} />
+        <Button onPress={generateSeed}>Generate seed</Button>
       </View>
     </SafeView>
   );

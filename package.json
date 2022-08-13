@@ -12,7 +12,7 @@
     "prettier": "prettier --write ./src",
     "check-types": "tsc --noEmit",
     "postinstall": "yarn build-polkadot-api",
-    "validate": "yarn lint & yarn check-types",
+    "validate": "concurrently \"yarn check-types\" \"yarn lint\"",
     "build-polkadot-api": "cd ./polkadot-api && yarn && yarn build"
   },
   "dependencies": {
@@ -26,8 +26,10 @@
     "react-native-gesture-handler": "^2.5.0",
     "react-native-get-random-values": "^1.8.0",
     "react-native-mmkv": "^2.4.3",
+    "react-native-paper": "5.0.0-rc.4",
     "react-native-safe-area-context": "^4.3.1",
     "react-native-screens": "^3.15.0",
+    "react-native-vector-icons": "^9.2.0",
     "react-native-webview": "^11.23.0",
     "recoil": "^0.7.4",
     "recoil-persist": "^4.2.0",
@@ -46,6 +48,7 @@
     "@typescript-eslint/parser": "^5.29.0",
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
+    "concurrently": "^7.3.0",
     "eslint": "^7.32.0",
     "husky": "^8.0.1",
     "jest": "^26.6.3",
