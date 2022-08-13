@@ -1,5 +1,4 @@
 import React from 'react';
-import {NavigationContainer} from '@navigation/NavigationContainer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {HomeScreen} from '@ui/screens/HomeScreen';
@@ -43,17 +42,15 @@ const BottomTab = createBottomTabNavigator<BottomTabNavigation>();
 
 export function AppNavigator() {
   return (
-    <NavigationContainer>
-      <BottomTab.Navigator screenOptions={{headerShown: false}}>
-        <BottomTab.Screen
-          name={routeKeys.homeNavigator}
-          component={HomeStackNavigator}
-        />
-        <BottomTab.Screen
-          name={routeKeys.menuNavigator}
-          component={MenuStackNavigator}
-        />
-      </BottomTab.Navigator>
-    </NavigationContainer>
+    <BottomTab.Navigator screenOptions={{headerShown: false}}>
+      <BottomTab.Screen
+        name={routeKeys.homeNavigator}
+        component={HomeStackNavigator}
+      />
+      <BottomTab.Screen
+        name={routeKeys.menuNavigator}
+        component={MenuStackNavigator}
+      />
+    </BottomTab.Navigator>
   );
 }
