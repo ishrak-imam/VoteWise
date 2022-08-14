@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, Button} from 'react-native';
+import {View, StyleSheet} from 'react-native';
+import {Button} from '@ui/library';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {HomeStackNavigation} from '@navigation/types';
 import {mnemonicScreen} from '@navigation/routeKeys';
@@ -14,11 +15,12 @@ export function HomeScreen({navigation}: Props) {
     <SafeView>
       <View style={styles.container}>
         <Button
-          title="Go to mnemonic"
+          mode="contained"
           onPress={() => {
             navigation.navigate(mnemonicScreen);
-          }}
-        />
+          }}>
+          Mnemonic screen
+        </Button>
       </View>
     </SafeView>
   );

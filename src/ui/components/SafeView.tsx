@@ -11,7 +11,7 @@ export function SafeView({children}: Props) {
   const {colors} = useTheme();
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['left', 'right']}>
       <View style={[styles.container, {backgroundColor: colors.background}]}>
         {children}
       </View>

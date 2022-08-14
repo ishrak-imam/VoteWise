@@ -1,6 +1,9 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationOptions,
+} from '@react-navigation/native-stack';
 import {HomeScreen} from '@ui/screens/HomeScreen';
 import {MnemonicScreen} from '@ui/screens/MnemonicScreen';
 import {SettingsScreen} from '@ui/screens/SettingsScreen';
@@ -11,11 +14,15 @@ import type {
 } from '@navigation/types';
 import * as routeKeys from '@navigation/routeKeys';
 
+const stackNavigatorScreenOptions: NativeStackNavigationOptions = {
+  presentation: 'card',
+};
+
 const HomeStack = createNativeStackNavigator<HomeStackNavigation>();
 
 function HomeStackNavigator() {
   return (
-    <HomeStack.Navigator>
+    <HomeStack.Navigator screenOptions={stackNavigatorScreenOptions}>
       <HomeStack.Screen name={routeKeys.homeScreen} component={HomeScreen} />
       <HomeStack.Screen
         name={routeKeys.mnemonicScreen}
@@ -29,7 +36,7 @@ const MenuStack = createNativeStackNavigator<MenuStackNavigation>();
 
 function MenuStackNavigator() {
   return (
-    <MenuStack.Navigator>
+    <MenuStack.Navigator screenOptions={stackNavigatorScreenOptions}>
       <MenuStack.Screen
         name={routeKeys.settingScreen}
         component={SettingsScreen}
