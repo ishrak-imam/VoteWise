@@ -11,3 +11,4 @@ export {
   BottomSheetBackdrop,
 } from '@gorhom/bottom-sheet';
 export type {BottomSheetBackdropProps} from '@gorhom/bottom-sheet';
+export {Icon} from './Icon';
