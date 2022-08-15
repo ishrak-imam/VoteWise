@@ -5,12 +5,16 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {HomeStackNavigation} from '@navigation/types';
 import {mnemonicScreen} from '@navigation/routeKeys';
 import {SafeView} from '@ui/components/SafeView';
+import {Padder} from '@ui/components/Padder';
+import {useStartTx} from '@context/TxContext';
 
 type Props = {
   navigation: NativeStackNavigationProp<HomeStackNavigation, 'Home'>;
 };
 
 export function HomeScreen({navigation}: Props) {
+  const {startTx} = useStartTx();
+
   return (
     <SafeView>
       <View style={styles.container}>
@@ -20,6 +24,14 @@ export function HomeScreen({navigation}: Props) {
             navigation.navigate(mnemonicScreen);
           }}>
           Mnemonic screen
+        </Button>
+        <Padder />
+        <Button
+          mode="contained"
+          onPress={() => {
+            startTx();
+          }}>
+          Start Tx
         </Button>
       </View>
     </SafeView>

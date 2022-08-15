@@ -16,6 +16,7 @@ import * as routeKeys from '@navigation/routeKeys';
 
 const stackNavigatorScreenOptions: NativeStackNavigationOptions = {
   presentation: 'card',
+  animation: 'slide_from_right',
 };
 
 const HomeStack = createNativeStackNavigator<HomeStackNavigation>();
@@ -47,7 +48,7 @@ function MenuStackNavigator() {
 
 const BottomTab = createBottomTabNavigator<BottomTabNavigation>();
 
-export function AppNavigator() {
+function BottomTabNavigator() {
   return (
     <BottomTab.Navigator screenOptions={{headerShown: false}}>
       <BottomTab.Screen
@@ -61,3 +62,5 @@ export function AppNavigator() {
     </BottomTab.Navigator>
   );
 }
+
+export default BottomTabNavigator;
