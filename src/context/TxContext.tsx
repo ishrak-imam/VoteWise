@@ -7,6 +7,7 @@ import {
   BottomSheetView,
   BottomSheetBackdrop,
 } from '@ui/library';
+import {Layout} from '@ui/components/Layout';
 import type {BottomSheetBackdropProps} from '@ui/library';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
@@ -61,10 +62,12 @@ export function TxProvider({children}: Props) {
           ]}
           handleIndicatorStyle={{backgroundColor: colors.primary}}
           backdropComponent={Backdrop}>
-          <BottomSheetView>
-            <View style={styles.centeredContainer}>
-              <Text>Awesome 🔥</Text>
-            </View>
+          <BottomSheetView style={styles.container}>
+            <Layout>
+              <View style={styles.centeredContainer}>
+                <Text>Awesome 🔥</Text>
+              </View>
+            </Layout>
           </BottomSheetView>
         </BottomSheet>
       </GestureHandlerRootView>
@@ -85,15 +88,15 @@ export function useStartTx() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'transparent',
+  },
+  handleStyle: {
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
   },
   centeredContainer: {
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  handleStyle: {
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
+    backgroundColor: 'green',
   },
 });
