@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface votewise_appTests : XCTestCase
+@interface VoteWiseTests : XCTestCase
 
 @end
 
-@implementation votewise_appTests
+@implementation VoteWiseTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

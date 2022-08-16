@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "votewise_app.app"
-               BlueprintName = "votewise_app"
-               ReferencedContainer = "container:votewise_app.xcodeproj">
+               BuildableName = "VoteWise.app"
+               BlueprintName = "VoteWise"
+               ReferencedContainer = "container:VoteWise.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "votewise_appTests.xctest"
-               BlueprintName = "votewise_appTests"
-               ReferencedContainer = "container:votewise_app.xcodeproj">
+               BuildableName = "VoteWiseTests.xctest"
+               BlueprintName = "VoteWiseTests"
+               ReferencedContainer = "container:VoteWise.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "votewise_app.app"
-            BlueprintName = "votewise_app"
-            ReferencedContainer = "container:votewise_app.xcodeproj">
+            BuildableName = "VoteWise.app"
+            BlueprintName = "VoteWise"
+            ReferencedContainer = "container:VoteWise.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "votewise_app.app"
-            BlueprintName = "votewise_app"
-            ReferencedContainer = "container:votewise_app.xcodeproj">
+            BuildableName = "VoteWise.app"
+            BlueprintName = "VoteWise"
+            ReferencedContainer = "container:VoteWise.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
