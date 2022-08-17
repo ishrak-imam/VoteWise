@@ -7,6 +7,7 @@ module.exports = {
         root: ['./'],
         extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
         alias: {
+          src: './src',
           '@polkadotApi': './src/polkadotApi',
           '@context': './src/context',
           '@service': './src/service',
@@ -14,6 +15,7 @@ module.exports = {
           '@atoms': './src/atoms',
           '@navigation': './src/navigation',
           '@ui': './src/ui',
+          '@api': './src/api',
         },
       },
     ],

@@ -17,13 +17,15 @@
     "rootDir": ".",
     "paths": {
       "*": ["node_modules/*"],
+      "src/*": ["src/*"],
       "@polkadotApi/*": ["src/polkadotApi/*"],
       "@context/*": ["src/context/*"],
       "@service/*": ["src/service/*"],
       "@hooks/*": ["src/hooks/*"],
       "@atoms/*": ["src/atoms/*"],
       "@navigation/*": ["src/navigation/*"],
-      "@ui/*": ["src/ui/*"]
+      "@ui/*": ["src/ui/*"],
+      "@api/*": ["src/api/*"]
     },
     "skipLibCheck": true
   },

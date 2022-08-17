@@ -7,22 +7,25 @@ import {ThemeProvider} from '@context/ThemeContext';
 import {NavigationContainer} from '@navigation/NavigationContainer';
 import {ErrorBoundary} from '@ui/components/ErrorBoundary';
 import {TxProvider} from '@context/TxContext';
+import {ApiClientProvider} from '@context/ApiContext';
 
 export default function App() {
   return (
     <RecoilRoot>
-      <ThemeProvider>
-        <SafeAreaProvider>
-          <NavigationContainer>
-            <ErrorBoundary>
-              <TxProvider>
-                <AppNavigator />
-                <PolkadotApiWebView />
-              </TxProvider>
-            </ErrorBoundary>
-          </NavigationContainer>
-        </SafeAreaProvider>
-      </ThemeProvider>
+      <ApiClientProvider>
+        <ThemeProvider>
+          <SafeAreaProvider>
+            <NavigationContainer>
+              <ErrorBoundary>
+                <TxProvider>
+                  <AppNavigator />
+                  <PolkadotApiWebView />
+                </TxProvider>
+              </ErrorBoundary>
+            </NavigationContainer>
+          </SafeAreaProvider>
+        </ThemeProvider>
+      </ApiClientProvider>
     </RecoilRoot>
   );
 }

@@ -13,13 +13,16 @@
     "check-types": "tsc --noEmit",
     "postinstall": "yarn build-polkadot-api",
     "validate": "concurrently \"yarn check-types\" \"yarn lint\"",
-    "build-polkadot-api": "cd ./polkadot-api && yarn && yarn build"
+    "build-polkadot-api": "cd ./polkadot-api && yarn && yarn build",
+    "generate-graphql-types": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "@gorhom/bottom-sheet": "^4.4.3",
     "@react-navigation/bottom-tabs": "^6.3.2",
     "@react-navigation/native": "^6.0.11",
     "@react-navigation/native-stack": "^6.7.0",
+    "graphql": "^16.6.0",
     "polkadot-api": "./polkadot-api",
     "react": "18.0.0",
     "react-native": "0.69.3",
@@ -40,6 +43,11 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
+    "@graphql-codegen/cli": "2.11.6",
+    "@graphql-codegen/fragment-matcher": "^3.3.1",
+    "@graphql-codegen/typescript": "2.7.3",
+    "@graphql-codegen/typescript-operations": "2.5.3",
+    "@graphql-codegen/typescript-react-apollo": "3.3.3",
     "@react-native-community/eslint-config": "^2.0.0",
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^26.0.23",
