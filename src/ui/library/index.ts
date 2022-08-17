@@ -4,6 +4,7 @@ export {
   Button,
   Text,
   TextInput,
+  Snackbar,
 } from 'react-native-paper';
 export {
   default as BottomSheet,

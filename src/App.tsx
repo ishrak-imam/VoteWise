@@ -8,6 +8,7 @@ import {NavigationContainer} from '@navigation/NavigationContainer';
 import {ErrorBoundary} from '@ui/components/ErrorBoundary';
 import {TxProvider} from '@context/TxContext';
 import {ApiClientProvider} from '@context/ApiContext';
+import {SnackbarProvider} from '@context/SnackBarContext';
 
 export default function App() {
   return (
@@ -17,10 +18,12 @@ export default function App() {
           <SafeAreaProvider>
             <NavigationContainer>
               <ErrorBoundary>
-                <TxProvider>
-                  <AppNavigator />
-                  <PolkadotApiWebView />
-                </TxProvider>
+                <SnackbarProvider>
+                  <TxProvider>
+                    <AppNavigator />
+                    <PolkadotApiWebView />
+                  </TxProvider>
+                </SnackbarProvider>
               </ErrorBoundary>
             </NavigationContainer>
           </SafeAreaProvider>

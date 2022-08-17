@@ -27,6 +27,12 @@ module.exports = {
             name: '@polkadot/util-crypto',
             message: 'Use @polkadotApi/useCryptoUtil instead.',
           },
+          {
+            name: '@ui/library',
+            importNames: ['Snackbar'],
+            message:
+              'Please use useSnackbar from context/SnackbarContext instead.',
+          },
         ],
       },
     ],
