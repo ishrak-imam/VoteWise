@@ -13,9 +13,8 @@ jest.mock('@polkadotApi/useCryptoUtil', () => ({
 
 describe('Mnemonic screen component', () => {
   it('should render generated seed on the screen', async () => {
-    const {findByTestId, findByText} = render(<MnemonicScreen />);
-    await findByTestId('generate-seed');
-    const generateSeedButton = await findByTestId('generate-seed');
+    const {findByRole, findByText} = render(<MnemonicScreen />);
+    const generateSeedButton = await findByRole('button');
 
     await waitFor(() => {
       fireEvent.press(generateSeedButton);

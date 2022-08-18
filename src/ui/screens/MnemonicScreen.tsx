@@ -18,7 +18,7 @@ export function MnemonicScreen() {
   return (
     <SafeView>
       <View style={styles.container}>
-        <Button onPress={generateSeed} mode="contained" testID="generate-seed">
+        <Button onPress={generateSeed} mode="contained">
           Generate seed
         </Button>
         <Padder scale={2} />
