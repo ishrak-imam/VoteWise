@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Button, TextInput} from '@ui/library';
+import {Button, Text} from '@ui/library';
 import {useCryptoUtil} from '@polkadotApi/useCryptoUtil';
 import {SafeView} from '@ui/components/SafeView';
 import {Padder} from '@ui/components/Padder';
@@ -18,18 +18,19 @@ export function MnemonicScreen() {
   return (
     <SafeView>
       <View style={styles.container}>
-        <Button onPress={generateSeed} mode="contained">
+        <Button onPress={generateSeed} mode="contained" testID="generate-seed">
           Generate seed
         </Button>
         <Padder scale={2} />
-        <TextInput
+        {/* <TextInput
           label="Mnemonic"
           mode="outlined"
           disabled
           value={mnemonic}
           style={styles.fullWidth}
           multiline
-        />
+        /> */}
+        <Text variant="bodySmall">{mnemonic}</Text>
       </View>
     </SafeView>
   );
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 8,
   },
-  fullWidth: {
-    width: '100%',
-  },
+  // fullWidth: {
+  //   width: '100%',
+  // },
 });

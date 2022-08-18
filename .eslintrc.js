@@ -33,6 +33,10 @@ module.exports = {
             message:
               'Please use useSnackbar from context/SnackbarContext instead.',
           },
+          {
+            name: '@testing-library/react-native',
+            message: 'Please use src/utils/testUtils instead',
+          },
         ],
       },
     ],

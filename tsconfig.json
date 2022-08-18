@@ -25,7 +25,8 @@
       "@atoms/*": ["src/atoms/*"],
       "@navigation/*": ["src/navigation/*"],
       "@ui/*": ["src/ui/*"],
-      "@api/*": ["src/api/*"]
+      "@api/*": ["src/api/*"],
+      "@utils/*": ["src/utils/*"]
     },
     "skipLibCheck": true
   },
