@@ -22,6 +22,7 @@
     "@react-navigation/bottom-tabs": "^6.3.2",
     "@react-navigation/native": "^6.0.11",
     "@react-navigation/native-stack": "^6.7.0",
+    "@sentry/react-native": "^4.2.4",
     "graphql": "^16.6.0",
     "polkadot-api": "./polkadot-api",
     "react": "18.0.0",

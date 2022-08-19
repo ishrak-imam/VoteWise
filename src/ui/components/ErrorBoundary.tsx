@@ -3,6 +3,7 @@ import {View, StyleSheet} from 'react-native';
 import {Button, Text} from '@ui/library';
 import {SafeView} from '@ui/components/SafeView';
 import {Padder} from '@ui/components/Padder';
+import Sentry from 'src/sentry/setup';
 
 type Props = {
   children: React.ReactNode;
@@ -15,15 +16,11 @@ export class ErrorBoundary extends React.Component<Props, {hasError: boolean}> {
   }
 
   static getDerivedStateFromError() {
-    // Update state so the next render will show the fallback UI.
     return {hasError: true};
   }
 
-  componentDidCatch(error: unknown, errorInfo: unknown) {
-    // You can also log the error to an error reporting service
-    console.error('ERROR CAUGHT: ');
-    console.error(error);
-    console.error(errorInfo);
+  componentDidCatch(error: unknown) {
+    Sentry.captureException(error);
   }
 
   render() {

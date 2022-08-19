@@ -4,5 +4,8 @@ import 'react-native-get-random-values'; // RN polyfill for uuid
 import {AppRegistry} from 'react-native';
 import App from './src/App';
 import {name as appName} from './app.json';
+import Sentry from './src/sentry/setup';
 
-AppRegistry.registerComponent(appName, () => App);
+const SentryApp = Sentry.wrap(App);
+
+AppRegistry.registerComponent(appName, () => SentryApp);
