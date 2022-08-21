@@ -888,6 +888,14 @@
   dependencies:
     nanoid "^3.3.1"
 
+"@graphql-codegen/add@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/add/-/add-3.2.1.tgz#f1109f36f194f88a6abcc51703abee43ebbb50a2"
+  integrity sha512-w82H/evh8SSGoD3K6K/Oh3kqSdbuU+TgHqMYmmHFxtH692v2xhN/cu1s/TotBQ7r4mO7OQutze7dde2tZEXGEQ==
+  dependencies:
+    "@graphql-codegen/plugin-helpers" "^2.6.2"
+    tslib "~2.4.0"
+
 "@graphql-codegen/cli@2.11.6":
   version "2.11.6"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-2.11.6.tgz#3acfd7cd3bac40999ba1262063d84ca7c96172dc"
@@ -2156,6 +2164,11 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.2.0.tgz#7d6d789ae8edf73dc9bed1246cd48277edea8066"
   integrity sha512-o6aam+0Ug1xGK3ABYmBm0B1YuEKfM/5kaoZO0eHbZwSpw9UzDX4G5y4Nx/K20FHqUmJHkZmLvOUFYwN4N+HqKA==
+
+"@react-native-community/netinfo@^9.3.0":
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-9.3.0.tgz#9792c23341eab5c629566baee016146f4f3f6086"
+  integrity sha512-NNdMeIXXqmPCbXrWxVqRzZ1gEZ6L1ykotWnCZLVjQBUgjyGWdL5LiDM/bcIa5DLzqZY7Km08rMgB7BoHUuEmnQ==
 
 "@react-native/assets@1.0.0":
   version "1.0.0"

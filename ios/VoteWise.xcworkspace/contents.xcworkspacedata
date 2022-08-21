@@ -7,10 +7,4 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:votewise.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Votewise.xcodeproj">
-   </FileRef>
 </Workspace>

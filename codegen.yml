@@ -3,6 +3,10 @@ schema: "https://graph.litentry.io/graphql"
 generates:
   src/generated/GraphQLApiTypes.ts:
     plugins:
+      - add:
+          content: '/* eslint-disable @typescript-eslint/no-unused-vars */'
+      - add:
+          content: '/* eslint-disable @typescript-eslint/no-explicit-any */'
       - "typescript"
       - "typescript-operations"
       - "typescript-react-apollo"

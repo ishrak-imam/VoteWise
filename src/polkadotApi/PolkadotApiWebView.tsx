@@ -76,6 +76,7 @@ import {
   Blake2AsHexMessage,
   blake2AsHexMessage,
 } from 'polkadot-api';
+import {useNetInfo} from '@hooks/useNetInfo';
 
 type PostMessage = (message: Message, id?: string) => void;
 
@@ -312,15 +313,22 @@ function useKeyringUtils(
 }
 
 function useInitApi(isWebviewLoaded: boolean, postMessage: PostMessage) {
+  const {isConnected} = useNetInfo();
   const {currentNetwork} = useNetwork();
   const setApiState = useSetRecoilState(apiStatusState);
 
   React.useEffect(() => {
-    if (isWebviewLoaded) {
+    if (isWebviewLoaded && isConnected) {
       postMessage(initApiMessage({wsEndpoint: currentNetwork.ws[0] as string}));
       setApiState('connecting');
     }
-  }, [isWebviewLoaded, postMessage, setApiState, currentNetwork.ws]);
+  }, [
+    isWebviewLoaded,
+    postMessage,
+    setApiState,
+    currentNetwork.ws,
+    isConnected,
+  ]);
 }
 
 function useApiTx(
