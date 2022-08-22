@@ -27,9 +27,6 @@ const mergeFunc = (existing: any, incoming: any, {args}: any) => {
 };
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-export let apolloClientInstance: ApolloClient<NormalizedCacheObject> | null =
-  null;
-
 export function ApiClientProvider({children}: {children: React.ReactNode}) {
   const [client, setClient] =
     React.useState<ApolloClient<NormalizedCacheObject>>();
@@ -79,9 +76,6 @@ export function ApiClientProvider({children}: {children: React.ReactNode}) {
         },
       });
       setClient(apolloClient);
-      if (__DEV__) {
-        apolloClientInstance = apolloClient;
-      }
     };
 
     init();

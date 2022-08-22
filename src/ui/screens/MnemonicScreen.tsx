@@ -4,6 +4,7 @@ import {Button, Text} from '@ui/library';
 import {useCryptoUtil} from '@polkadotApi/useCryptoUtil';
 import {SafeView} from '@ui/components/SafeView';
 import {Padder} from '@ui/components/Padder';
+import {useTips} from '@api/hooks/useTips';
 
 export function MnemonicScreen() {
   const [mnemonic, setMnemonic] = React.useState('');
@@ -14,6 +15,8 @@ export function MnemonicScreen() {
       setMnemonic(result.mnemonic);
     });
   }, [generateMnemonic]);
+
+  const {data} = useTips();
 
   return (
     <SafeView>
@@ -31,6 +34,8 @@ export function MnemonicScreen() {
           multiline
         /> */}
         <Text variant="bodySmall">{mnemonic}</Text>
+        <Padder scale={3} />
+        <Text>Tip Reason: {data?.[0].reason}</Text>
       </View>
     </SafeView>
   );

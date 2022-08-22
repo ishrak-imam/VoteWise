@@ -8,4 +8,12 @@ import Sentry from './src/sentry/setup';
 
 const SentryApp = Sentry.wrap(App);
 
+// Use this to mock data on dev
+// if (__DEV__) {
+//   require('react-native-url-polyfill/auto');
+//   const {native} = require('./mocks/native');
+
+//   native.listen();
+// }
+
 AppRegistry.registerComponent(appName, () => SentryApp);

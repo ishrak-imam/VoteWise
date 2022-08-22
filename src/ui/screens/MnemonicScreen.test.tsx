@@ -16,6 +16,10 @@ describe('Mnemonic screen component', () => {
     const {findByRole, findByText} = render(<MnemonicScreen />);
     const generateSeedButton = await findByRole('button');
 
+    await waitFor(async () => {
+      await findByText('Tip Reason: TO: Szegoo FOR: substrate#11767 (small)');
+    });
+
     await waitFor(() => {
       fireEvent.press(generateSeedButton);
     });
