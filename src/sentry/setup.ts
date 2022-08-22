@@ -1,7 +1,7 @@
 import * as Sentry from '@sentry/react-native';
 
 const SENTRY_DSN =
-  'https://4574a547884e4a259a08a15e21872f98@o1365918.ingest.sentry.io/6662578';
+  'https://ccc71a1f02154c4dbd535f7c14c92536@o1362749.ingest.sentry.io/6676976';
 
 const isDev = __DEV__;
 
