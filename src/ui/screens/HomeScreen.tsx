@@ -8,7 +8,7 @@ import {SafeView} from '@ui/components/SafeView';
 import {Padder} from '@ui/components/Padder';
 import {useStartTx} from '@context/TxContext';
 import {usePolkadotApiStatus} from '@polkadotApi/usePolkadotApiStatus';
-import {useNetInfo} from 'src/hooks/useNetInfo';
+import {useNetInfo} from '@hooks/useNetInfo';
 
 type Props = {
   navigation: NativeStackNavigationProp<HomeStackNavigation, 'Home'>;

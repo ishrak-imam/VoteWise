@@ -17,7 +17,6 @@
     "rootDir": ".",
     "paths": {
       "*": ["node_modules/*"],
-      "src/*": ["src/*"],
       "@polkadotApi/*": ["src/polkadotApi/*"],
       "@context/*": ["src/context/*"],
       "@service/*": ["src/service/*"],
@@ -26,7 +25,9 @@
       "@navigation/*": ["src/navigation/*"],
       "@ui/*": ["src/ui/*"],
       "@api/*": ["src/api/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "sentry/*": ["src/sentry/*"],
+      "@apiTypes/*": ["src/generated/*"],
     },
     "skipLibCheck": true
   },

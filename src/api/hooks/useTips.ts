@@ -3,7 +3,7 @@ import {
   SubstrateChainTip,
   SubstrateChainTipStatus,
   SubstrateChainTipsOrderByInput,
-} from 'src/generated/GraphQLApiTypes';
+} from '@apiTypes/GraphQLApiTypes';
 
 export type Tip = SubstrateChainTip;
 export const TipsOrderByInput = SubstrateChainTipsOrderByInput;

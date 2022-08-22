@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, fireEvent, waitFor} from 'src/utils/testUtil';
+import {render, fireEvent, waitFor} from '@utils/testUtil';
 import {MnemonicScreen} from '@ui/screens/MnemonicScreen';
 
 const mockSeed =

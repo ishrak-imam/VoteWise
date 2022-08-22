@@ -21,7 +21,6 @@ const config = {
     'node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation|@gorhom|@babel/runtime/helpers/esm/)',
   ],
   moduleNameMapper: {
-    '^src/(.*)$': '<rootDir>/src/$1',
     '^@ui/(.*)$': '<rootDir>/src/ui/$1',
     '^@context/(.*)$': '<rootDir>/src/context/$1',
     '^@service/(.*)$': '<rootDir>/src/service/$1',
@@ -31,6 +30,8 @@ const config = {
     '^@polkadotApi/(.*)$': '<rootDir>/src/polkadotApi/$1',
     '^@navigation/(.*)$': '<rootDir>/src/navigation/$1',
     '^@utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^sentry/(.*)$': '<rootDir>/src/sentry/$1',
+    '^@apiTypes/(.*)$': '<rootDir>/src/generated/$1',
   },
   verbose: true,
 };

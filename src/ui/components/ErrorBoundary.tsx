@@ -3,7 +3,7 @@ import {View, StyleSheet} from 'react-native';
 import {Button, Text} from '@ui/library';
 import {SafeView} from '@ui/components/SafeView';
 import {Padder} from '@ui/components/Padder';
-import Sentry from 'src/sentry/setup';
+import Sentry from 'sentry/setup';
 
 type Props = {
   children: React.ReactNode;
