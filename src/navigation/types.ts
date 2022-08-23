@@ -14,6 +14,12 @@ export type BottomTabNavigation = {
   [routeKeys.menuNavigator]: undefined;
 };
 
-export type CompleteNavigatorParamList = BottomTabNavigation &
+export type AppStackNavigation = {
+  [routeKeys.onboardingScreen]: undefined;
+  [routeKeys.bottomTabNavigator]: undefined;
+};
+
+export type CompleteNavigatorParamList = AppStackNavigation &
+  BottomTabNavigation &
   MenuStackNavigation &
   HomeStackNavigation;

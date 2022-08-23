@@ -1,7 +1,7 @@
 import {useState, useCallback} from 'react';
 import {setItem, getItem} from '@service/persistedStore';
 
-export type PersistedStateKey = 'theme';
+export type PersistedStateKey = 'theme' | 'onboarding_seen';
 
 export function usePersistedState<T>(
   key: PersistedStateKey,

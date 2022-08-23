@@ -7,16 +7,24 @@ import type {NativeStackNavigationOptions} from '@react-navigation/native-stack'
 import {HomeScreen} from '@ui/screens/HomeScreen';
 import {MnemonicScreen} from '@ui/screens/MnemonicScreen';
 import {SettingsScreen} from '@ui/screens/SettingsScreen';
+import {OnboardingScreen} from '@ui/screens/OnboardingScreen';
 import type {
   HomeStackNavigation,
   MenuStackNavigation,
   BottomTabNavigation,
+  AppStackNavigation,
 } from '@navigation/types';
 import * as routeKeys from '@navigation/routeKeys';
+import {useIsOnboardingSeen} from '@hooks/useIsOnboardingSeen';
 
 const stackNavigatorScreenOptions: NativeStackNavigationOptions = {
   presentation: 'card',
   animation: 'slide_from_right',
+};
+
+const appStackNavigatorScreenOptions: NativeStackNavigationOptions = {
+  headerShown: false,
+  animation: 'fade',
 };
 
 const tabNavigatorScreenOptions: BottomTabNavigationOptions = {
@@ -81,4 +89,25 @@ function BottomTabNavigator() {
   );
 }
 
-export default BottomTabNavigator;
+const AppStack = createNativeStackNavigator<AppStackNavigation>();
+
+function AppStackNavigator() {
+  const {isOnboardingSeen} = useIsOnboardingSeen();
+
+  return (
+    <AppStack.Navigator screenOptions={appStackNavigatorScreenOptions}>
+      {!isOnboardingSeen ? (
+        <AppStack.Screen
+          name={routeKeys.onboardingScreen}
+          component={OnboardingScreen}
+        />
+      ) : null}
+      <AppStack.Screen
+        name={routeKeys.bottomTabNavigator}
+        component={BottomTabNavigator}
+      />
+    </AppStack.Navigator>
+  );
+}
+
+export default AppStackNavigator;

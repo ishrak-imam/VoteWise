@@ -1,3 +1,4 @@
+export const onboardingScreen = 'Onboarding' as const;
 export const homeScreen = 'Home' as const;
 export const mnemonicScreen = 'Mnemonic' as const;
 export const settingScreen = 'Settings' as const;
