@@ -43,8 +43,8 @@ module.exports = {
     'react/no-unstable-nested-components': 'error',
     '@typescript-eslint/no-shadow': 'error',
     'react-native/no-unused-styles': 'error',
-    '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/no-unused-vars': 'error',
   },
   overrides: [
     {

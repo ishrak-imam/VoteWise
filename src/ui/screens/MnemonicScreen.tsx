@@ -5,6 +5,7 @@ import {useCryptoUtil} from '@polkadotApi/useCryptoUtil';
 import {SafeView} from '@ui/components/SafeView';
 import {Padder} from '@ui/components/Padder';
 import {useTips} from '@api/hooks/useTips';
+import {QRScanner} from '@ui/components/QRScanner';
 
 export function MnemonicScreen() {
   const [mnemonic, setMnemonic] = React.useState('');
@@ -16,7 +17,7 @@ export function MnemonicScreen() {
     });
   }, [generateMnemonic]);
 
-  const {data} = useTips();
+  const {data: tips} = useTips();
 
   return (
     <SafeView>
@@ -35,7 +36,16 @@ export function MnemonicScreen() {
         /> */}
         <Text variant="bodySmall">{mnemonic}</Text>
         <Padder scale={3} />
-        <Text>Tip Reason: {data?.[0].reason}</Text>
+        <Text>Tip Reason: {tips?.[0].reason}</Text>
+        <Padder />
+
+        <View style={styles.cameraView}>
+          <QRScanner
+            onScan={data => {
+              console.log('scan data ::: ', data);
+            }}
+          />
+        </View>
       </View>
     </SafeView>
   );
@@ -51,4 +61,8 @@ const styles = StyleSheet.create({
   // fullWidth: {
   //   width: '100%',
   // },
+  cameraView: {
+    width: 300,
+    height: 300,
+  },
 });

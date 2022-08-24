@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler'; // For react-navigation gestures
 import 'react-native-get-random-values'; // RN polyfill for uuid
+import 'react-native-reanimated'; // Needed for vision-camera-code-scanner
 
 import {AppRegistry} from 'react-native';
 import App from './src/App';

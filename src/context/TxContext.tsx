@@ -90,13 +90,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   handleStyle: {
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
+    borderTopLeftRadius: 13,
+    borderTopRightRadius: 13,
   },
   centeredContainer: {
-    height: '100%',
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'green',
   },
 });
