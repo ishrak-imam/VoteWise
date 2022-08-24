@@ -16,7 +16,7 @@ const config = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   setupFilesAfterEnv: ['./jest/setupAfterEnv.ts', './jest/setupTests.js'],
-  setupFiles: ['<rootDir>/jest/setup.js'],
+  setupFiles: ['<rootDir>/jest/setup.js', '<rootDir>/jest/mockedComponents.js'],
   transformIgnorePatterns: [
     'node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation|@gorhom|@babel/runtime/helpers/esm/)',
   ],
