@@ -1,5 +1,5 @@
 import React from 'react';
 
-jest.mock('../src/ui/components/QRScanner', () => ({
+jest.mock('@ui/components/QRScanner', () => ({
   QRScanner: () => <></>,
 }));

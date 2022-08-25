@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Linking, ActivityIndicator} from 'react-native';
+import {StyleSheet, View, Linking} from 'react-native';
 import {
   Camera,
   useCameraDevices,
@@ -8,7 +8,7 @@ import {
 import {BarcodeFormat, scanBarcodes, Barcode} from 'vision-camera-code-scanner';
 import {runOnJS} from 'react-native-reanimated';
 import {useCameraPermission} from '@hooks/useCameraPermission';
-import {Text, Button} from '@ui/library';
+import {Text, Button, ActivityIndicator} from '@ui/library';
 import {Padder} from '@ui/components/Padder';
 
 type Props = {
@@ -46,7 +46,7 @@ export function QRScanner({onScan}: Props) {
   if (!device) {
     return (
       <View style={styles.centeredContainer}>
-        <ActivityIndicator size="large" />
+        <ActivityIndicator />
       </View>
     );
   }
@@ -54,11 +54,9 @@ export function QRScanner({onScan}: Props) {
   if (!hasPermission) {
     return (
       <View style={styles.centeredContainer}>
-        <Text variant="titleMedium">{'Need camera permission'}</Text>
+        <Text variant="titleSmall">{'Need camera permission'}</Text>
         <Padder />
-        <Button onPress={openAppSetting} mode="outlined">
-          Open Settings
-        </Button>
+        <Button onPress={openAppSetting}>Open Settings</Button>
       </View>
     );
   }

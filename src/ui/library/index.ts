@@ -5,6 +5,7 @@ export {
   Text,
   TextInput,
   Snackbar,
+  ActivityIndicator,
 } from 'react-native-paper';
 export {
   default as BottomSheet,
