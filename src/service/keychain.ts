@@ -3,15 +3,12 @@ import Keychain from 'react-native-keychain';
 const KEYCHAIN_USER = 'VoteWise_User';
 const BASE_SERVICE = 'com.VoteWise';
 
-export enum ACCESS_CONTROL {
-  BIOMETRY = 'BIOMETRY_CURRENT_SET',
-  PASSCODE = 'DEVICE_PASSCODE',
-}
-
-export function setPassword(password: string, accessControl: ACCESS_CONTROL, serviceId: string) {
+export function setPassword(password: string, serviceId: string) {
   return Keychain.setGenericPassword(KEYCHAIN_USER, password, {
     accessible: Keychain.ACCESSIBLE.WHEN_UNLOCKED_THIS_DEVICE_ONLY,
-    accessControl: Keychain.ACCESS_CONTROL[accessControl],
+    accessControl: Keychain.ACCESS_CONTROL.BIOMETRY_CURRENT_SET_OR_DEVICE_PASSCODE,
+    authenticationType: Keychain.AUTHENTICATION_TYPE.DEVICE_PASSCODE_OR_BIOMETRICS,
+    securityLevel: Keychain.SECURITY_LEVEL.SECURE_HARDWARE,
     storage: Keychain.STORAGE_TYPE.AES,
     service: `${BASE_SERVICE}-${serviceId}`,
   });
