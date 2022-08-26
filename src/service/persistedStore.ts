@@ -1,9 +1,6 @@
 import {mmkvStore} from './mmkvStore';
 
-export function getItem<T>(
-  key: string,
-  defaultValue: T | null = null,
-): T | null {
+export function getItem<T>(key: string, defaultValue: T | null = null): T | null {
   const item = mmkvStore.getString(key);
 
   if (item) {

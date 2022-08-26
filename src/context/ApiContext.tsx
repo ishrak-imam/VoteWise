@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  ApolloClient,
-  ApolloProvider,
-  InMemoryCache,
-  NormalizedCacheObject,
-  createHttpLink,
-} from '@apollo/client';
+import {ApolloClient, ApolloProvider, InMemoryCache, NormalizedCacheObject, createHttpLink} from '@apollo/client';
 import {useNetwork} from '@atoms/network';
 
 const API_URI = 'https://graph.litentry.io/graphql';
@@ -28,8 +22,7 @@ const mergeFunc = (existing: any, incoming: any, {args}: any) => {
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
 export function ApiClientProvider({children}: {children: React.ReactNode}) {
-  const [client, setClient] =
-    React.useState<ApolloClient<NormalizedCacheObject>>();
+  const [client, setClient] = React.useState<ApolloClient<NormalizedCacheObject>>();
   const {currentNetwork} = useNetwork();
 
   React.useEffect(() => {

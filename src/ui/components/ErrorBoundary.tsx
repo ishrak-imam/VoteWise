@@ -30,9 +30,7 @@ export class ErrorBoundary extends React.Component<Props, {hasError: boolean}> {
           <View style={styles.container}>
             <Text>Something went wrong!</Text>
             <Padder />
-            <Button onPress={() => this.setState({hasError: false})}>
-              Try again
-            </Button>
+            <Button onPress={() => this.setState({hasError: false})}>Try again</Button>
           </View>
         </SafeView>
       );

@@ -38,12 +38,11 @@ export const webViewReadyState = atom({
   default: false,
 });
 
-export const appAccountsState: RecoilState<Record<string, KeyringAccount>> =
-  atom({
-    key: 'appAccounts',
-    default: {},
-    effects: [persistAtom],
-  });
+export const appAccountsState: RecoilState<Record<string, KeyringAccount>> = atom({
+  key: 'appAccounts',
+  default: {},
+  effects: [persistAtom],
+});
 
 export const cryptoUtilState = atom({
   key: 'cryptoUtil',
@@ -89,9 +88,7 @@ const emptyAccountJson: KeyringAccount = {
 export const keyringState = atom({
   key: 'keyring',
   default: {
-    createAddressFromMnemonic: (
-      _: CreateAddressFromMnemonicMessage['payload'],
-    ) => {
+    createAddressFromMnemonic: (_: CreateAddressFromMnemonicMessage['payload']) => {
       return Promise.resolve<string>('');
     },
     addAccount: (_: AddAccountMessage['payload']) => {
@@ -123,12 +120,7 @@ export const keyringState = atom({
   },
 });
 
-type ApiStatus =
-  | 'connecting'
-  | 'disconnected'
-  | 'connected'
-  | 'ready'
-  | 'error';
+type ApiStatus = 'connecting' | 'disconnected' | 'connected' | 'ready' | 'error';
 
 export const apiStatusState = atom<ApiStatus>({
   key: 'polkadot-api-status',

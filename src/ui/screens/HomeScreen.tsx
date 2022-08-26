@@ -41,9 +41,7 @@ export function HomeScreen({navigation}: Props) {
 
         <Padder />
         <Text>Polkadot API status : {status}</Text>
-        <Text>
-          Network status : {isConnected ? 'connected' : 'disconnected'}
-        </Text>
+        <Text>Network status : {isConnected ? 'connected' : 'disconnected'}</Text>
       </View>
     </SafeView>
   );

@@ -35,9 +35,7 @@ export function ThemeProvider({children}: PropTypes) {
 
   return (
     <ThemeContext.Provider value={{theme, toggleTheme}}>
-      <PaperProvider theme={theme === 'dark' ? themeDark : themeLight}>
-        {children}
-      </PaperProvider>
+      <PaperProvider theme={theme === 'dark' ? themeDark : themeLight}>{children}</PaperProvider>
     </ThemeContext.Provider>
   );
 }

@@ -4,13 +4,7 @@ import {View, Platform, StyleSheet} from 'react-native';
 import {useSetRecoilState} from 'recoil';
 import RNFS from 'react-native-fs';
 import {v4 as uuid4} from 'uuid';
-import {
-  webViewReadyState,
-  cryptoUtilState,
-  keyringState,
-  apiStatusState,
-  txState,
-} from './atoms';
+import {webViewReadyState, cryptoUtilState, keyringState, apiStatusState, txState} from './atoms';
 import {useNetwork} from '@atoms/network';
 import {useAppAccounts} from './useAppAccounts';
 import {
@@ -80,10 +74,7 @@ import {useNetInfo} from '@hooks/useNetInfo';
 
 type PostMessage = (message: Message, id?: string) => void;
 
-type MessageResolver<MessageResultPayload> = Record<
-  string,
-  (_result: MessageResultPayload) => void
->;
+type MessageResolver<MessageResultPayload> = Record<string, (_result: MessageResultPayload) => void>;
 
 type WebViewPromiseResponse<Payload> = {
   resolve: MessageResolver<Payload>;
@@ -92,35 +83,19 @@ type WebViewPromiseResponse<Payload> = {
 
 type ResolversRef = React.MutableRefObject<{
   resolveMnemonic: MessageResolver<GenerateMnemonicResultMessage['payload']>;
-  resolveValidateMnemonic: MessageResolver<
-    ValidateMnemonicResultMessage['payload']
-  >;
-  resolveCreateAddressFromMnemonic: MessageResolver<
-    CreateAddressFromMnemonicResultMessage['payload']['address']
-  >;
-  resolveAddAccount: MessageResolver<
-    AddAccountResultMessage['payload']['account']
-  >;
-  resolveAddExternalAccount: MessageResolver<
-    AddExternalAccountResultMessage['payload']['account']
-  >;
-  resolveVerifyCredentials: MessageResolver<
-    VerifyCredentialsResultMessage['payload']
-  >;
-  restoreAccountPromise: WebViewPromiseResponse<
-    KeyringAccountPayload['account']
-  >;
-  exportAccountPromise: WebViewPromiseResponse<
-    KeyringAccountPayload['account']
-  >;
+  resolveValidateMnemonic: MessageResolver<ValidateMnemonicResultMessage['payload']>;
+  resolveCreateAddressFromMnemonic: MessageResolver<CreateAddressFromMnemonicResultMessage['payload']['address']>;
+  resolveAddAccount: MessageResolver<AddAccountResultMessage['payload']['account']>;
+  resolveAddExternalAccount: MessageResolver<AddExternalAccountResultMessage['payload']['account']>;
+  resolveVerifyCredentials: MessageResolver<VerifyCredentialsResultMessage['payload']>;
+  restoreAccountPromise: WebViewPromiseResponse<KeyringAccountPayload['account']>;
+  exportAccountPromise: WebViewPromiseResponse<KeyringAccountPayload['account']>;
   signPromise: WebViewPromiseResponse<SignResultPayload['signed']>;
   getTxInfoPromise: WebViewPromiseResponse<GetTxInfoResultPayload['txInfo']>;
   getTxPayloadPromise: WebViewPromiseResponse<TxPayloadData>;
   sendTxPromise: WebViewPromiseResponse<TxSuccessful['txHash']>;
   signAndSendTxPromise: WebViewPromiseResponse<TxSuccessful['txHash']>;
-  resolveGetTxMethodArgsLength: MessageResolver<
-    GetTxMethodArgsLengthResultMessage['payload']
-  >;
+  resolveGetTxMethodArgsLength: MessageResolver<GetTxMethodArgsLengthResultMessage['payload']>;
   resolveDecodeAddress: MessageResolver<DecodeAddressResultMessage['payload']>;
   resolveBlake2AsHex: MessageResolver<Blake2AsHexResultMessage['payload']>;
   resolveCheckAddress: MessageResolver<CheckAddressResultMessage['payload']>;
@@ -187,11 +162,7 @@ function useSetSS58Format(isWebviewLoaded: boolean, postMessage: PostMessage) {
   }, [isWebviewLoaded, ss58Format, postMessage]);
 }
 
-function useCryptoUtils(
-  isWebviewLoaded: boolean,
-  postMessage: PostMessage,
-  resolversRef: ResolversRef,
-) {
+function useCryptoUtils(isWebviewLoaded: boolean, postMessage: PostMessage, resolversRef: ResolversRef) {
   const setCryptoUtilState = useSetRecoilState(cryptoUtilState);
 
   React.useEffect(() => {
@@ -237,19 +208,13 @@ function useCryptoUtils(
   }, [isWebviewLoaded, setCryptoUtilState, postMessage, resolversRef]);
 }
 
-function useKeyringUtils(
-  isWebviewLoaded: boolean,
-  postMessage: PostMessage,
-  resolversRef: ResolversRef,
-) {
+function useKeyringUtils(isWebviewLoaded: boolean, postMessage: PostMessage, resolversRef: ResolversRef) {
   const setKeyringState = useSetRecoilState(keyringState);
 
   React.useEffect(() => {
     if (isWebviewLoaded) {
       setKeyringState({
-        createAddressFromMnemonic: (
-          payload: CreateAddressFromMnemonicMessage['payload'],
-        ) => {
+        createAddressFromMnemonic: (payload: CreateAddressFromMnemonicMessage['payload']) => {
           return new Promise(resolve => {
             const id = uuid4();
             resolversRef.current.resolveCreateAddressFromMnemonic[id] = resolve;
@@ -322,20 +287,10 @@ function useInitApi(isWebviewLoaded: boolean, postMessage: PostMessage) {
       postMessage(initApiMessage({wsEndpoint: currentNetwork.ws[0] as string}));
       setApiState('connecting');
     }
-  }, [
-    isWebviewLoaded,
-    postMessage,
-    setApiState,
-    currentNetwork.ws,
-    isConnected,
-  ]);
+  }, [isWebviewLoaded, postMessage, setApiState, currentNetwork.ws, isConnected]);
 }
 
-function useApiTx(
-  isWebviewLoaded: boolean,
-  postMessage: PostMessage,
-  resolversRef: ResolversRef,
-) {
+function useApiTx(isWebviewLoaded: boolean, postMessage: PostMessage, resolversRef: ResolversRef) {
   const setTxState = useSetRecoilState(txState);
 
   React.useEffect(() => {
@@ -373,9 +328,7 @@ function useApiTx(
             postMessage(signAndSendTxMessage(payload), id);
           });
         },
-        getTxMethodArgsLength: (
-          payload: GetTxMethodArgsLengthMessage['payload'],
-        ) => {
+        getTxMethodArgsLength: (payload: GetTxMethodArgsLengthMessage['payload']) => {
           return new Promise(resolve => {
             const id = uuid4();
             resolversRef.current.resolveGetTxMethodArgsLength[id] = resolve;
@@ -387,10 +340,7 @@ function useApiTx(
   }, [isWebviewLoaded, setTxState, postMessage, resolversRef]);
 }
 
-function useWebViewOnMessage(
-  resolversRef: ResolversRef,
-  postMessage: PostMessage,
-) {
+function useWebViewOnMessage(resolversRef: ResolversRef, postMessage: PostMessage) {
   const {accounts, setAccounts} = useAppAccounts();
   const setApiState = useSetRecoilState(apiStatusState);
   const {currentNetwork} = useNetwork();
@@ -544,9 +494,7 @@ function useWebViewOnMessage(
         case MessageType.API_ERROR: {
           console.warn('API ERROR', message.payload);
           setApiState('error');
-          postMessage(
-            initApiMessage({wsEndpoint: currentNetwork.ws[0] as string}),
-          );
+          postMessage(initApiMessage({wsEndpoint: currentNetwork.ws[0] as string}));
           break;
         }
 
@@ -631,14 +579,7 @@ function useWebViewOnMessage(
         }
       }
     },
-    [
-      accounts,
-      setAccounts,
-      resolversRef,
-      setApiState,
-      currentNetwork.ws,
-      postMessage,
-    ],
+    [accounts, setAccounts, resolversRef, setApiState, currentNetwork.ws, postMessage],
   );
 
   return {webViewOnMessage};

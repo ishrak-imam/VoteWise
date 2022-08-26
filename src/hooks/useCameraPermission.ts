@@ -11,9 +11,7 @@ export function useCameraPermission() {
     if (isAppActive || didAppCameToForeground) {
       const requestCameraPermission = async () => {
         if (Platform.OS === 'android') {
-          const granted = await PermissionsAndroid.request(
-            PermissionsAndroid.PERMISSIONS.CAMERA as Permission,
-          );
+          const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA as Permission);
           setHasPermission(granted === PermissionsAndroid.RESULTS.GRANTED);
         } else {
           const status = await Camera.requestCameraPermission();

@@ -1,10 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Linking} from 'react-native';
-import {
-  Camera,
-  useCameraDevices,
-  useFrameProcessor,
-} from 'react-native-vision-camera';
+import {Camera, useCameraDevices, useFrameProcessor} from 'react-native-vision-camera';
 import {BarcodeFormat, scanBarcodes, Barcode} from 'vision-camera-code-scanner';
 import {runOnJS} from 'react-native-reanimated';
 import {useCameraPermission} from '@hooks/useCameraPermission';

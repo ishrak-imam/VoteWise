@@ -2,8 +2,7 @@ import React from 'react';
 import {render, fireEvent, waitFor} from '@utils/testUtil';
 import {MnemonicScreen} from '@ui/screens/MnemonicScreen';
 
-const mockSeed =
-  'faint topic zebra dream hurry someone twice usage stable cousin mandate leader';
+const mockSeed = 'faint topic zebra dream hurry someone twice usage stable cousin mandate leader';
 
 jest.mock('@polkadotApi/useCryptoUtil', () => ({
   useCryptoUtil: () => ({

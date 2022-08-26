@@ -7,9 +7,7 @@ const netWorkAccountsState = selector({
   get: ({get}) => {
     const accounts = get(appAccountsState);
     const network = get(networkState);
-    return Object.values(accounts).filter(
-      account => account.meta.network === network.key,
-    );
+    return Object.values(accounts).filter(account => account.meta.network === network.key);
   },
 });
 

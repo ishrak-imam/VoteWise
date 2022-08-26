@@ -1,7 +1,5 @@
 import React from 'react';
-import MaterialIcons, {
-  default as VectorIcon,
-} from 'react-native-vector-icons/MaterialIcons';
+import MaterialIcons, {default as VectorIcon} from 'react-native-vector-icons/MaterialIcons';
 import {useTheme} from '@ui/library';
 
 type IconProps = {
@@ -13,7 +11,5 @@ type IconProps = {
 export function Icon({name, color, size = 30}: IconProps) {
   const {colors} = useTheme();
 
-  return (
-    <VectorIcon name={name} size={size} color={color ?? colors.onSurface} />
-  );
+  return <VectorIcon name={name} size={size} color={color ?? colors.onSurface} />;
 }

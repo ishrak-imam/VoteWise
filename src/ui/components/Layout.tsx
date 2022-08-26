@@ -9,11 +9,7 @@ type Props = {
 export function Layout({children}: Props) {
   const {colors} = useTheme();
 
-  return (
-    <View style={[styles.container, {backgroundColor: colors.background}]}>
-      {children}
-    </View>
-  );
+  return <View style={[styles.container, {backgroundColor: colors.background}]}>{children}</View>;
 }
 
 const styles = StyleSheet.create({

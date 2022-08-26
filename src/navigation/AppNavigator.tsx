@@ -38,10 +38,7 @@ function HomeStackNavigator() {
   return (
     <HomeStack.Navigator screenOptions={stackNavigatorScreenOptions}>
       <HomeStack.Screen name={routeKeys.homeScreen} component={HomeScreen} />
-      <HomeStack.Screen
-        name={routeKeys.mnemonicScreen}
-        component={MnemonicScreen}
-      />
+      <HomeStack.Screen name={routeKeys.mnemonicScreen} component={MnemonicScreen} />
     </HomeStack.Navigator>
   );
 }
@@ -51,10 +48,7 @@ const MenuStack = createNativeStackNavigator<MenuStackNavigation>();
 function MenuStackNavigator() {
   return (
     <MenuStack.Navigator screenOptions={stackNavigatorScreenOptions}>
-      <MenuStack.Screen
-        name={routeKeys.settingScreen}
-        component={SettingsScreen}
-      />
+      <MenuStack.Screen name={routeKeys.settingScreen} component={SettingsScreen} />
     </MenuStack.Navigator>
   );
 }
@@ -63,9 +57,7 @@ const BottomTab = createBottomTabNavigator<BottomTabNavigation>();
 
 function BottomTabNavigator() {
   const renderIcon = React.useCallback(
-    (name: string, color: string) => (
-      <Icon name={name} size={20} color={color} />
-    ),
+    (name: string, color: string) => <Icon name={name} size={20} color={color} />,
     [],
   );
 
@@ -96,16 +88,8 @@ function AppStackNavigator() {
 
   return (
     <AppStack.Navigator screenOptions={appStackNavigatorScreenOptions}>
-      {!isOnboardingSeen ? (
-        <AppStack.Screen
-          name={routeKeys.onboardingScreen}
-          component={OnboardingScreen}
-        />
-      ) : null}
-      <AppStack.Screen
-        name={routeKeys.bottomTabNavigator}
-        component={BottomTabNavigator}
-      />
+      {!isOnboardingSeen ? <AppStack.Screen name={routeKeys.onboardingScreen} component={OnboardingScreen} /> : null}
+      <AppStack.Screen name={routeKeys.bottomTabNavigator} component={BottomTabNavigator} />
     </AppStack.Navigator>
   );
 }

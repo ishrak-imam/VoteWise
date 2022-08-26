@@ -1,9 +1,5 @@
 import {gql, NetworkStatus, useQuery} from '@apollo/client';
-import {
-  SubstrateChainTip,
-  SubstrateChainTipStatus,
-  SubstrateChainTipsOrderByInput,
-} from '@apiTypes/GraphQLApiTypes';
+import {SubstrateChainTip, SubstrateChainTipStatus, SubstrateChainTipsOrderByInput} from '@apiTypes/GraphQLApiTypes';
 
 export type Tip = SubstrateChainTip;
 export const TipsOrderByInput = SubstrateChainTipsOrderByInput;
@@ -15,12 +11,7 @@ export const TIPS_QUERY = gql`
     $offset: Int
     $orderBy: SubstrateChainTipsOrderByInput
   ) {
-    substrateChainTips(
-      status: $status
-      limit: $limit
-      offset: $offset
-      orderBy: $orderBy
-    ) {
+    substrateChainTips(status: $status, limit: $limit, offset: $offset, orderBy: $orderBy) {
       id
       createdAt
       who {
@@ -43,12 +34,7 @@ type TipsQueryParams = {
 };
 
 export function useTips(queryParams?: TipsQueryParams) {
-  const status = queryParams?.status ?? [
-    'Closed',
-    'Opened',
-    'Retracted',
-    'Slashed',
-  ];
+  const status = queryParams?.status ?? ['Closed', 'Opened', 'Retracted', 'Slashed'];
   const limit = queryParams?.limit ?? 20;
   const offset = queryParams?.offset ?? 0;
   const orderBy = queryParams?.orderBy ?? TipsOrderByInput.CreatedAtDesc;

@@ -1,12 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {
-  Text,
-  useTheme,
-  BottomSheet,
-  BottomSheetView,
-  BottomSheetBackdrop,
-} from '@ui/library';
+import {Text, useTheme, BottomSheet, BottomSheetView, BottomSheetBackdrop} from '@ui/library';
 import {Layout} from '@ui/components/Layout';
 import type {BottomSheetBackdropProps} from '@ui/library';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
@@ -26,12 +20,7 @@ const TxContext = React.createContext<TxContext>({
 });
 
 const Backdrop = (props: BottomSheetBackdropProps) => (
-  <BottomSheetBackdrop
-    {...props}
-    pressBehavior="close"
-    disappearsOnIndex={-1}
-    appearsOnIndex={0}
-  />
+  <BottomSheetBackdrop {...props} pressBehavior="close" disappearsOnIndex={-1} appearsOnIndex={0} />
 );
 
 export function TxProvider({children}: Props) {
@@ -56,10 +45,7 @@ export function TxProvider({children}: Props) {
           snapPoints={snapPoints}
           enablePanDownToClose
           index={-1}
-          handleStyle={[
-            styles.handleStyle,
-            {backgroundColor: colors.background},
-          ]}
+          handleStyle={[styles.handleStyle, {backgroundColor: colors.background}]}
           handleIndicatorStyle={{backgroundColor: colors.primary}}
           backdropComponent={Backdrop}>
           <BottomSheetView style={styles.container}>

@@ -26,9 +26,7 @@ export function OnboardingScreen({navigation}: Props) {
       <View style={styles.container}>
         <Text>Onboarding screen</Text>
         <Padder />
-        <Button onPress={startApp} mode="contained">
-          Skip
-        </Button>
+        <Button onPress={startApp}>Skip</Button>
       </View>
     </SafeView>
   );

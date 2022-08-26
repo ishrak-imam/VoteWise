@@ -3,13 +3,8 @@ import {setItem, getItem} from '@service/persistedStore';
 
 export type PersistedStateKey = 'theme' | 'onboarding_seen';
 
-export function usePersistedState<T>(
-  key: PersistedStateKey,
-): [T | undefined, (newState: T) => void];
-export function usePersistedState<T>(
-  key: PersistedStateKey,
-  initialState: T,
-): [T, (newState: T) => void];
+export function usePersistedState<T>(key: PersistedStateKey): [T | undefined, (newState: T) => void];
+export function usePersistedState<T>(key: PersistedStateKey, initialState: T): [T, (newState: T) => void];
 
 export function usePersistedState<T>(
   key: PersistedStateKey,

@@ -9,9 +9,5 @@ type Props = {
 
 export function NavigationContainer({children}: Props) {
   const {theme} = useToggleTheme();
-  return (
-    <RNnavigationContainer theme={theme === 'dark' ? darkTheme : lightTheme}>
-      {children}
-    </RNnavigationContainer>
-  );
+  return <RNnavigationContainer theme={theme === 'dark' ? darkTheme : lightTheme}>{children}</RNnavigationContainer>;
 }

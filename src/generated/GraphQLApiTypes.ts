@@ -1061,13 +1061,9 @@ export type Query = {
   substrateChainCrowdloanSummary: SubstrateChainCrowdloanSummary;
   substrateChainCrowdloans: Array<SubstrateChainCrowdloan>;
   substrateChainDemocracyProposal?: Maybe<SubstrateChainDemocracyProposal>;
-  substrateChainDemocracyProposals?: Maybe<
-    Array<SubstrateChainDemocracyProposal>
-  >;
+  substrateChainDemocracyProposals?: Maybe<Array<SubstrateChainDemocracyProposal>>;
   substrateChainDemocracyReferendum?: Maybe<SubstrateChainDemocracyReferendum>;
-  substrateChainDemocracyReferendums?: Maybe<
-    Array<SubstrateChainDemocracyReferendum>
-  >;
+  substrateChainDemocracyReferendums?: Maybe<Array<SubstrateChainDemocracyReferendum>>;
   substrateChainDemocracySummary: SubstrateChainDemocracySummary;
   substrateChainEndedCrowdloans: Array<SubstrateChainCrowdloan>;
   substrateChainModuleElection: SubstrateChainModuleElection;
@@ -1401,9 +1397,7 @@ export type QuerySubstrateCrowdloanContributionAccountByUniqueInputArgs = {
 export type QuerySubstrateCrowdloanContributionAccountsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  orderBy?: InputMaybe<
-    Array<InputMaybe<SubstrateCrowdloanContributionAccountOrderByInput>>
-  >;
+  orderBy?: InputMaybe<Array<InputMaybe<SubstrateCrowdloanContributionAccountOrderByInput>>>;
   where?: InputMaybe<SubstrateCrowdloanContributionAccountWhereInput>;
 };
 
@@ -1425,9 +1419,7 @@ export type QuerySubstrateCrowdloanContributionByUniqueInputArgs = {
 export type QuerySubstrateCrowdloanContributionsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  orderBy?: InputMaybe<
-    Array<InputMaybe<SubstrateCrowdloanContributionOrderByInput>>
-  >;
+  orderBy?: InputMaybe<Array<InputMaybe<SubstrateCrowdloanContributionOrderByInput>>>;
   where?: InputMaybe<SubstrateCrowdloanContributionWhereInput>;
 };
 
@@ -3236,9 +3228,7 @@ export type SubstrateCrowdloanContributionAccount = {
 export type SubstrateCrowdloanContributionAccountCrowdloanContributionsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  orderBy?: InputMaybe<
-    Array<InputMaybe<SubstrateCrowdloanContributionOrderByInput>>
-  >;
+  orderBy?: InputMaybe<Array<InputMaybe<SubstrateCrowdloanContributionOrderByInput>>>;
   where?: InputMaybe<SubstrateCrowdloanContributionWhereInput>;
 };
 

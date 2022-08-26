@@ -13,9 +13,7 @@ export function useAppState() {
       const isNextStateActive = nextAppState === 'active';
       setAppState({
         isAppActive: isNextStateActive,
-        didAppCameToForeground:
-          Boolean(appStateRef.current.match(/inactive|background/)) &&
-          isNextStateActive,
+        didAppCameToForeground: Boolean(appStateRef.current.match(/inactive|background/)) && isNextStateActive,
       });
       appStateRef.current = nextAppState;
     });
