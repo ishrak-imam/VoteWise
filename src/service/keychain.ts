@@ -15,6 +15,13 @@ export function setPassword(password: string, serviceId: string) {
 }
 
 export function getPassword(serviceId: string) {
-  console.log(`${BASE_SERVICE}-${serviceId}`);
-  return Keychain.getGenericPassword({service: `${BASE_SERVICE}-${serviceId}`});
+  return Keychain.getGenericPassword({
+    service: `${BASE_SERVICE}-${serviceId}`,
+  });
+}
+
+export function resetPassword(serviceId: string) {
+  return Keychain.resetGenericPassword({
+    service: `${BASE_SERVICE}-${serviceId}`,
+  });
 }
