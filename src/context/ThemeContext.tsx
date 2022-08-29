@@ -6,21 +6,21 @@ import {themeDark, themeLight} from '@ui/library/theme';
 
 type Theme = 'light' | 'dark';
 
-type ThemeContextValue = {
+type ThemeContext = {
   theme: Theme;
   toggleTheme: () => void;
 };
 
-const ThemeContext = React.createContext<ThemeContextValue>({
+const ThemeContext = React.createContext<ThemeContext>({
   theme: 'light',
   toggleTheme: () => undefined,
 });
 
-type PropTypes = {
+type Props = {
   children: React.ReactNode;
 };
 
-export function ThemeProvider({children}: PropTypes) {
+export function ThemeProvider({children}: Props) {
   const [theme, setTheme] = usePersistedState<Theme>('theme', 'light');
 
   const toggleTheme = React.useCallback(() => {

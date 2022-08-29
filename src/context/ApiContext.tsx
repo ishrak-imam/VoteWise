@@ -10,16 +10,16 @@ type ApiContextType = {
 
 const ApiContext = React.createContext<ApiContextType | undefined>(undefined);
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-const mergeFunc = (existing: any, incoming: any, {args}: any) => {
-  const offset = args ? args.offset : 0;
-  const merged = existing ? existing.slice(0) : [];
-  for (let i = 0; i < incoming.length; ++i) {
-    merged[offset + i] = incoming[i];
-  }
-  return merged;
-};
-/* eslint-enable @typescript-eslint/no-explicit-any */
+// /* eslint-disable @typescript-eslint/no-explicit-any */
+// const mergeFunc = (existing: any, incoming: any, {args}: any) => {
+//   const offset = args ? args.offset : 0;
+//   const merged = existing ? existing.slice(0) : [];
+//   for (let i = 0; i < incoming.length; ++i) {
+//     merged[offset + i] = incoming[i];
+//   }
+//   return merged;
+// };
+// /* eslint-enable @typescript-eslint/no-explicit-any */
 
 export function ApiClientProvider({children}: {children: React.ReactNode}) {
   const [client, setClient] = React.useState<ApolloClient<NormalizedCacheObject>>();
@@ -27,32 +27,7 @@ export function ApiClientProvider({children}: {children: React.ReactNode}) {
 
   React.useEffect(() => {
     const init = async () => {
-      const cache = new InMemoryCache({
-        typePolicies: {
-          Query: {
-            fields: {
-              substrateChainCouncil: {
-                merge: true,
-              },
-              substrateChainAccount: {
-                merge: true,
-              },
-              substrateChainTips: {
-                keyArgs: [],
-                merge: mergeFunc,
-              },
-              substrateChainDemocracyReferendums: {
-                keyArgs: [],
-                merge: mergeFunc,
-              },
-              substrateChainDemocracyProposals: {
-                keyArgs: [],
-                merge: mergeFunc,
-              },
-            },
-          },
-        },
-      });
+      const cache = new InMemoryCache();
 
       const apolloClient = new ApolloClient({
         link: createHttpLink({
