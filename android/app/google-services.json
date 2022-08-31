@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "943703071344",
+    "project_id": "votewise-d837f",
+    "storage_bucket": "votewise-d837f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943703071344:android:3042ea2263b1dad57732b5",
+        "android_client_info": {
+          "package_name": "com.VoteWise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943703071344-s3cns684ueom30ap7srt20b14e6ir7q7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAETohSXncuDL-I_ZZtSsdnv_-QAjRcOLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943703071344-s3cns684ueom30ap7srt20b14e6ir7q7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

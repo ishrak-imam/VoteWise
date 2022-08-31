@@ -6,6 +6,15 @@ import {AppRegistry} from 'react-native';
 import App from './src/App';
 import {name as appName} from './app.json';
 import Sentry from './src/sentry/setup';
+import messaging from '@react-native-firebase/messaging';
+import {notificationHandlerBackground} from './src/hooks/useRegisterFCMListeners';
+
+/**
+ * This is needed here because in case of a push notification when the android app
+ * is in inactive state(killed completely) the app starts in a headless JS mode which
+ * only executes the index.js and the application root component remains unmounted.
+ */
+messaging().setBackgroundMessageHandler(notificationHandlerBackground);
 
 const SentryApp = Sentry.wrap(App);
 

@@ -10,8 +10,11 @@ import {TxProvider} from '@context/TxContext';
 import {ApiClientProvider} from '@context/ApiContext';
 import {SnackbarProvider} from '@context/SnackBarContext';
 import {DialogProvider} from '@context/DialogContext';
+import {useRegisterFCMListeners} from '@hooks/useRegisterFCMListeners';
 
 export default function App() {
+  useRegisterFCMListeners();
+
   return (
     <RecoilRoot>
       <ApiClientProvider>

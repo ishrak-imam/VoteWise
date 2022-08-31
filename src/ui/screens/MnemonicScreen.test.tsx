@@ -6,7 +6,7 @@ const mockSeed = 'faint topic zebra dream hurry someone twice usage stable cousi
 
 jest.mock('@polkadotApi/useCryptoUtil', () => ({
   useCryptoUtil: () => ({
-    generateMnemonic: () => Promise.resolve({mnemonic: mockSeed}),
+    generateMnemonic: jest.fn().mockResolvedValue({mnemonic: mockSeed}),
   }),
 }));
 
