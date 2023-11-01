@@ -10,7 +10,7 @@ One (probably the best) way to solve this problem was to write those crypto func
 
 But time is the most valuable asset here, and we needed to come up with a solution quickly to keep the app usable. One idea is to bundle the crypto utils in a JS package and load it in an internal WebView in React native. Since the native WebView has WASM support we can just perform our operations by message passing to and from the WebView. This looks like a good temporary solution.
 
-But the only way to communicate to and from a WebView is through serialized message passing and the implementation detail could get very messy very fast if not planned properly.
+However, the only way to communicate to and from a WebView is through serialized message passing and the implementation detail could get very messy very fast if not planned properly.
 
 This repository is a reference implementation of the solution. The solution has two parts. One is similar to a web app which imports the Polkadot crypto libraries and some utility functions are wrapped around them. WebPack bundles a minimized JS file into an html which is is linked as an asset in ios and android. The process is completely automated and integrated with ios and android build step.
 
