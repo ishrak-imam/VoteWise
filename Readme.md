@@ -2,7 +2,7 @@
 
 #### This repository is a POC for the solution of the following problem
 
-The scenario is for cross platform React Native app that can interact with various blockchain networks and also act as a non custodial crypto wallet to sign transactions in blockchain.
+The scenario is for a cross platform React Native app that can interact with various blockchain networks and also act as a non custodial crypto wallet to sign transactions in blockchain.
 
 The app was mostly focused on the Governance related actions on Substrate based blockchain networks like Polkadot, Kusama, Litentry etc. To generate the accounts from seed phrases and to sign transactions with the private key some Polkadot crypto utils and keyring packages were being used, which are primarily developed for web. Since those are JS based usage in a React Native environment was trivial. However, the challenge was those packages use WASM for crypto operations and React Native JS engines do not support WASM yet. So the packages were falling back to ASM which is very slow and the React Native app was not usable since the UI thread was blocking while executing any crypto operation and UX was degrading.
 
